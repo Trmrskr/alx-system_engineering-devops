@@ -1,1 +1,1 @@
-Script to print the current working directory
+Basic shell navigation scripts
