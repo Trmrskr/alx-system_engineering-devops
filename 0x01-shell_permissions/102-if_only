@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -name guillaume -exec chown betty hello
