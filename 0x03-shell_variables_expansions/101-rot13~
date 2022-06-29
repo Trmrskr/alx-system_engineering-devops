@@ -1,0 +1,3 @@
+#!/bin/bash
+#implementation of rot-13 cipher
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
