@@ -1,2 +1,2 @@
 #!/bin/bash
-paste --|cut -f 1	#paste take recieve from standard input, renders output in 2 column, pipes it to cut which renders the first column only
+paste - -|cut -f 1	#paste take recieve from standard input, renders output in 2 column, pipes it to cut which renders the first column only
