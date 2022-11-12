@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # A script that stops a process without using kill
 
-pkill -xf 4-to_infinity_and_beyond
+pkill -15 "./4-to_infinity_and_beyond" -f
