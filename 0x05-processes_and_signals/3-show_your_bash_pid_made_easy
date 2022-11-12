@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This scripts shows a list of PID containing the ``Bash`` word
+# shellcheck disable=SC2009
+
+pgrep bash -l
