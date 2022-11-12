@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # A script that stops a process without using kill
 
-pkill KILL "./7-highlander" -f
+pkill -9 "./7-highlander" -f
