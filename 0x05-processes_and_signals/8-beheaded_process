@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# A script that stops a process without using kill
+# A script that SIGKILLs a process without using kill
 
 pkill -9 "./7-highlander" -f
