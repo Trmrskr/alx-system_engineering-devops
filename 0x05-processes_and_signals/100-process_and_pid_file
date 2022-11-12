@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 # This script creates a file, infinitely displays and trap signals
 
-function rm_exit()
+rm_exit()
 {
-	rm /var/run/myscript.pid && exit
+	rm /var/run/myscript.pid
+	exit
 }
+
+trap "echo 'I hate the kill command' && rm_exit" TERM
+trap "echo 'Y U no love me?!'" INT
+trap "rm_exit" QUIT
 
 echo "$$" > /var/run/myscript.pid
 
@@ -12,7 +17,4 @@ while true
 do
 	echo "To infinity and beyond"
 	sleep 2
-	trap "echo 'I hate the kill command' && rm_exit" TERM
-	trap "echo 'Y U no love me?!'" INT
-	trap "rm_exit" QUIT
 done
