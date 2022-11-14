@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Displays each of 0 to 59 minutes in a 12hours clock
+
+hour=0
+
+while [ $hour -le 12 ]
+do
+	echo "Hour: $hour"
+	min=1
+	while [ $min -le 59 ]
+	do
+		echo "$min"
+		((min++))
+	done
+	((hour++))
+done
