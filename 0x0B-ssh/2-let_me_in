@@ -1,0 +1,22 @@
+How to add ssh public keys to remote server.
+
+Method 1
+
+Use the following command from your local machine.
+cat ~/.ssh/id_rsa.pub | ssh username@remote_host "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+Replace the 'id_rsa.pub' with the file containing the intended public key
+Replace the username@remote_host appropriately
+mkdir -p ~/.ssh ensures there is a .ssh directory
+
+Method 2 (Manual method)
+Login to the remote server using your own ssh key
+Open the /.ssh/authorized_key file
+Append the public key to the file manually
+
+Method 3 (The one that worked for me)
+Login to the remote server using your own ssh key
+Run the following command
+echo 'ssh_key' >> ~/.ssh/authorized_key
+
+Example
+echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNdtrNGtTXe5Tp1EJQop8mOSAuRGLjJ6DW4PqX4wId/Kawz35ESampIqHSOTJmbQ8UlxdJuk0gAXKk3Ncle4safGYqM/VeDK3LN5iAJxf4kcaxNtS3eVxWBE5iF3FbIjOqwxw5Lf5sRa5yXxA8HfWidhbIG5TqKL922hPgsCGABIrXRlfZYeC0FEuPWdr6smOElSVvIXthRWp9cr685KdCI+COxlj1RdVsvIo+zunmLACF9PYdjB2s96Fn0ocD3c5SGLvDOFCyvDojSAOyE70ebIElnskKsDTGwfT4P6jh9OBzTyQEIS2jOaE5RQq4IB4DsMhvbjDSQrP0MdCLgwkN >> ~/.ssh/authorized_key
