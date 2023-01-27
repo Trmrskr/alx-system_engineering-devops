@@ -1,0 +1,15 @@
+While solving task 3 redirection, I hit a lot of snag. However, I finally crossed. But from this I got some insights about nginx web server debugging which I would like to hint here.
+
+When debugging nginx, always try to check/use the following tools/files:
+nginx -t - to check for what is causing nginx to faile. I used this when my nginx server refused to bind/connect to port 80.
+
+/etc/nginx/sites-enabled/default - check this file to see it your configurations are correct.
+/var/html - check to see if anything is wrong with your html files here.
+/var/log/nginx/error.log - This file containes a log of all error encountered with the nginx server. It can help you to trace where your are making error.
+/var/log/syslog - This file contains system errors encountered while working with the OS.
+/etc/nginx/nginx.conf - Containes nginx server configuration blocks.
+
+occassionally, you could try starting/restarting your nginx web server using the command
+sudo service nginx start  for starting or
+sudo service nginx restart for restarting
+
