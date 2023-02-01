@@ -33,7 +33,8 @@ sudo service ufw restart
 
 Test
 netstat -lpn
-sudo iptables -t nat -L -n -v
+sudo iptables -t nat -L -n -v or
+sudo iptables -L -n -v
 
 
 https://www.cyberciti.biz/faq/how-to-configure-ufw-to-forward-port-80443-to-internal-server-hosted-on-lan/
