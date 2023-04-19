@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+
+create_database="CREATE DATABASE IF NOT EXISTS tyrell_corp;USE tyrell_corp;"
+create_table="CREATE TABLE IF NOT EXISTS nexus6(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(256) NOT NULL);"
+grant_select="GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';"
+insert_record="INSERT INTO nexus6(name) VALUES ('Simon');"
+full_command="${create_database}\n${create_table}\n${grant_select}\n${insert_record}"
+
+echo "$full_command" | sudo mysql
+
