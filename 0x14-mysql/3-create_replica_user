@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+create_replica_user="CREATE USER 'replica_user'@'%' IDENTIFIED WITH mysql_native_password BY '82ma72ku76';"
+grant_repl="GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'replica_user'@'%';"
+grant_select="GRANT SELECT ON mysql.user TO 'replica_user'@'%';"
+
+command_usr="${create_replica_user}\n${grant_repl}\n${grant_select}"
+
+echo "$command_usr" | sudo mysql
